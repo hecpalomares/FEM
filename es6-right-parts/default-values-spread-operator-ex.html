@@ -1,0 +1,16 @@
+<script>
+function ignoreTwoAndThreeArgument(x, ignore_1, ignore_2, ...rest) { 
+	return [x, ...rest];
+}
+
+function bar() {
+	var a1 = [ 2, 4 ];
+	var a2 = [ 6, 8, 10, 12 ];
+
+	return ignoreTwoAndThreeArgument(...a1, ...a2);
+}
+
+console.log(
+	bar().join("") === "281012"
+);
+</script>
